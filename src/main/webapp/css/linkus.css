@@ -10,22 +10,44 @@ main .box{
     width: 800px;
     height: 360px;
 
-    border:3px dotted var(--main-color);
+    border:3px solid var(--main-color);
+    border-image: linear-gradient(to right, #1296db, #174897) 1;
     margin: 20px auto;
     position: relative;
 }
-main .card{
+/* main .card{
     position: absolute;
     bottom: 10px;
     left: 40px;
-}
+} */
 main dd{
     font-size: 18px;
     font-weight: 600;
     margin: 10px;
+    /* text-align: center; */
 }
-
 main #wechatma{
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+
+    border:2px solid var(--main-color);
+    border-image: linear-gradient(to right, #1296db, #174897) 1;
+}
+main .box span{
+    color: var(--main-color);
+    font-weight: 800;
+    display: block;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+main .card{
+    /* width: 100%; */
+    margin: 20px;
+}
+/* main #wechatma{
     width: 150px;
     height: 150px;
     position:absolute;
@@ -49,4 +71,4 @@ main #address{
     position:absolute;
     bottom: 30px;
     right: 45px;
-}
+} */

@@ -114,13 +114,24 @@ nav li a:hover{
 
 
 main>h2{
-    color: #2558aa;
     text-align: center;
-    margin: 20px;
+    margin: 10px 0px;
     height: 40px;
-    border-bottom: #174897 dotted 4px;
+    line-height: 40px;
 
-    text-shadow: #333 1px 1px 1px;
+    color: #2558aa;
+    background: linear-gradient(to right, #1296db, #174897);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    border-bottom: #174897 dotted 4px;
+    border: #174897 solid 6px;
+    /* border-image: linear-gradient(to right,#174897, #1296db) 1; */
+    border-image: linear-gradient(to right,#174897, #1296db, #174897) 1;
+
+
+ 
  
 }
 
