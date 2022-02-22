@@ -1,0 +1,457 @@
+
+/* __________________main_________________________ */
+
+main{
+    
+    /* height: 1080px; */
+    margin:0px auto;
+    position: relative;
+
+    /* box-shadow:0px 0px 2px black; */
+    /* border-bottom: #444 solid 1px;; */
+}
+/* 轮播图 */
+main .banner{
+    width: 100%;
+    height: 300px;
+    margin: 0px auto;
+    overflow: hidden; 
+    position: relative;
+    
+}
+
+main .banner li {
+    list-style: none;
+    width: inherit;
+    height: 100%;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+
+    transition: .5s transform ease-in-out;
+}
+
+main .banner img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* main .banner li:nth-of-type(1){
+    
+} */
+main .banner li:nth-of-type(2){
+    left: 100%;
+    
+}
+
+main .banner li:nth-of-type(3){
+    left: 200%;
+}
+main input[type="radio"]{
+    position: relative;
+    /* z-index: 100; */
+    display: none;
+}
+
+.controls-visible {
+    position:absolute;
+    width: 100%;
+    bottom: 12px;
+    text-align: center;
+    z-index: 999;
+}
+.controls-visible label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    /* background-color: rgb(255, 0, 0); */
+    background-color: rgba(224, 224, 224, 0.87);
+    border-radius: 50%;
+    margin: 0px 3px;
+    border: 2px solid #fff;
+}
+/* 选中按钮改变背景色 */
+main input[type="radio"]:nth-of-type(1):checked~
+.controls-visible label:nth-of-type(1),
+main input[type="radio"]:nth-of-type(2):checked~
+.controls-visible label:nth-of-type(2),
+main input[type="radio"]:nth-of-type(3):checked~
+.controls-visible label:nth-of-type(3){
+  background-color: #174897;
+}
+
+/* 轮播图切换效果 */
+main input[type="radio"]:nth-of-type(1):checked~li{
+    transform: translateX(0%);
+}
+main input[type="radio"]:nth-of-type(2):checked~li{
+    transform: translateX(-100%);
+}
+main input[type="radio"]:nth-of-type(3):checked~li{
+    transform: translateX(-200%);
+}
+
+/* 轮播图 左右切换按键 */
+.banner i{
+
+    font-weight: 100;
+    color: rgba(235, 241, 253, 0.582);;
+   /* border:2px solid var(--main-color); */
+    font-size: 40px;
+    text-align:center;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgba(51,112,255,.2);
+    border-radius: 50%;
+    box-sizing: border-box;
+   
+    /* box-shadow: 0px 0px 3px black;     */
+   
+    position: absolute;
+}
+.banner i:hover{
+    color: var(--hover-color);
+    border:2px solid var(--hover-color);
+    /* background-color: var(--hover-color); */
+}
+.banner .controls-left{
+   
+    left: 10px;
+    top: 120px;
+    
+}
+.banner .controls-right{
+    right: 10px;
+    top: 120px;
+}
+
+/* 二段标题 */
+main .title span{
+    color: #666;
+    font-size: 32px;
+    font-weight:700;
+    display: block;
+    width: 300px;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+  
+}
+main .title span::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color:#174897f5;
+    position: absolute;
+    bottom: -8px;
+    left:120px ;
+    border-radius: 10px;
+}
+/* 热门产品 */
+
+main .index_hot_product{
+    /* margin-top: 10px; */
+    height: 258px;
+    width: 100%;
+    /* background-image: url(./img/lswlbg.jpg); */
+    
+    
+}
+
+main .index_hot_product .container{
+    padding-top: 10px;
+    width:900px;
+    margin:0px auto;
+    height: 200px;
+    position: relative;
+}
+main .index_hot_product .button-left,
+main .index_hot_product .button-right{
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+    line-height:100px;
+    text-align: center;
+   
+    color: #2e70db;
+    /* background-color:  */
+    outline: 5px solid #2e70db;
+    position: absolute;
+    top:50px;
+    border-radius: 50%;
+}
+main .index_hot_product .button-left{
+    left: -130px;
+    
+}
+main .index_hot_product .button-right{
+    right: -130px;
+}
+main .index_hot_product .button-left:hover,
+main .index_hot_product .button-right:hover{
+    color: yellowgreen;
+    outline: 5px solid yellowgreen;
+}
+/* 产品分类 */
+main .index_product{
+   margin-top: 12px;
+    width: 100%;
+    height: 420px;
+    outline: 12px;
+}
+main .index_product .container aside {
+ 
+    width: 20%;
+    height: 380px;
+    float: left;
+    background-color: #174897;
+    margin: 10px 0px 0px 0px;
+    border-radius: 5px;
+}
+/* main .index_product .container aside ul{
+   
+} */
+main .index_product .container aside ul li{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color:white;
+    text-align: left;
+    padding-left: 40px;
+    box-sizing: border-box;
+    
+    
+}
+main .index_product .container aside ul li:nth-of-type(2n){
+    background-color: hsl(217, 70%, 42%);
+}
+main .index_product .container aside ul li:hover{
+    background-color:var(--hover-color)
+}
+main .index_product .container main{
+    /* padding-top: 10px; */
+    width: 80%;
+    height: 395px;
+    margin:0px auto;
+    float: left;
+    overflow: hidden;
+}
+
+/* ___________Product Style____________ */
+/* 商品样式 */
+.product_container{
+    width: 160px;
+    height: 180px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 0px 3px #333;
+    background-color:#2e70db;
+    float: left;
+    overflow: hidden;
+
+}
+.product_container:hover{
+    background-color: var(--hover-color);
+
+}
+.product_container:hover span{
+    color: #333;
+}
+.product_container #img{
+    width: 140px;
+    height: 130px;
+    border-radius: 5px;
+    margin: 10px 10px 5px 10px;
+
+    overflow: hidden;
+}
+.product_container img{
+
+    width: 100%;
+    height: 100%;
+
+    
+    /* float: left; */
+}
+.product_container:hover img{
+    transition:all 1s;/*图片放大过程的时间*/
+    transform: scale(1.05);  /*以y轴为中心旋转*/
+}
+.product_container  span{
+    color: white;
+    display: block;
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+}
+
+/* ___________Product Style____________ */
+
+/* 选择我们 */
+
+main .select_us{
+    
+    height: 800px;
+}
+main .select_us .title p{
+    margin-top: 10px;
+    display: block;
+    color: #666;
+    text-align: center;
+}
+
+main .select_us .container{
+    /* backdrop-filter: blur(2px);   */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+main .select_us .container li{
+    display: block;
+    width: 600px;
+    height: 130px;
+    margin:20px 20px;
+    list-style: none;
+    position: absolute;
+}
+main .select_us .container li img{
+    width: 300px;
+    height: 240px;
+    position: absolute;
+    
+   border-radius: 10px;
+}
+main .select_us .container li:nth-of-type(1) img{
+    top:0px;
+    left: 380px;
+    /* transform: translate3d(0px,20px ,30px); */
+}
+main .select_us .container li:nth-of-type(2) img{
+    top:-200px;
+    left: 700px;
+}
+main .select_us .container li:nth-of-type(3) img{
+    bottom: -100px;
+    left: -380px;
+}
+main .select_us .container li:nth-of-type(4) img{
+    bottom: 50px;
+    left: -700px;
+}
+main .select_us .container li:nth-of-type(1){
+    top: 30px;
+    left: 10%;
+}
+main .select_us .container li:nth-of-type(2){
+    top: 230px;
+    left: 10%;
+}
+main .select_us .container li:nth-of-type(3){
+    bottom: 240px;
+    right:  -15%;
+    /* left: 10%; */
+}
+main .select_us .container li:nth-of-type(4){
+    bottom: 90px;
+    right: -15%;
+    /* left: 10%; */
+}
+main .select_us  h2{
+    
+    height: 60px;
+    /* width: 400px; */
+}
+main .select_us ul li h2 i{
+    /* color: #1296db; */
+    color:var(--secon-color);
+    float: left;
+    font-size: 60px;
+}
+/* main .select_us ul li h2 i img{
+    display: block;
+    width: 60px;
+    height: 60px;
+    float: left;
+} */
+.select_us ul li h2 span{
+    float: left;
+    margin-left: 20px;
+    color: #666666;
+}
+.select_us ul li h2 span em{
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    color: #007bdf;
+}
+.select_us ul li p{
+    text-align: left;
+    clear:both
+}
+
+/* 关于我们 */
+main .index_about{
+
+    color: white;
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    background: url(../img/index_about.jpg);
+    /* background-position: center center; */
+    background-size: 1000px 400px;
+    opacity: 0.9;
+    position: relative;
+    overflow: hidden;
+}
+.index_about .title span{
+    color: white;
+    backdrop-filter: blur(10px);  
+    border-radius: 4px;
+}
+.index_about .container {
+    width: 75%;
+    
+    overflow: hidden;
+    margin: -20px auto;
+    /* background-color: red; */
+    display: grid;
+    grid-template-rows: 75px 75px 75px 75px  ;
+    /* grid-template-columns: 100px  100px 100px 100px 100px 100px 100px 100px ; */
+    grid-template-columns: 10%  10% 10% 10% 10% 10% 10% 10% ;
+}
+
+.index_about .container img{
+    /* display: block; */
+    /* flex: 1; */
+    grid-row: 2/5;
+    grid-column: 1/5;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px #333;
+    
+}
+
+.index_about .container p{
+    grid-row: 2/5;
+    grid-column: 6/10;
+    /* background-color:rgba(23, 72, 151, 0.95); */
+   
+    backdrop-filter: blur(6px); 
+    padding:20px;
+    border-radius:4px;
+    font-size: 16px;
+
+    line-height: 20px;
+    /* font-style: oblique; */ 
+    /* font-variant: inherit; */
+}
+

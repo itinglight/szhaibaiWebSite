@@ -1,0 +1,1522 @@
+:root{
+   --main-color:#174897;
+}
+
+
+/*媒体查询*/
+/*当页面大于1200px 时，大屏幕，主要是PC 端*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+@media (min-width: 1200px) {   
+   
+    body{
+        color: rgb(68, 68, 68);
+    }
+    header{
+    
+        width: 900px;
+        height: 72px;
+        margin:0px auto;
+        display: flex;
+        position: relative;
+        
+    }
+    
+    .logo img{
+        width: 72px;
+        height: 72px;
+        /* box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.692); */
+        border-radius: 3px;
+        
+    }
+    h1{
+        line-height: 72px;
+        margin-left: 20px;
+        color: #333;
+    }
+    
+    
+    /* 客户热线 */
+    header .kefuphone{
+    
+        width: 300px;
+        height: 72px;
+        line-height: 72px;
+        font-size: 25px;
+        font-weight: 900;
+      
+        position: absolute;
+        right: 85px;
+        color: transparent; 
+    
+        font-style: oblique;  
+        
+        background-image: -webkit-linear-gradient(left,#fd821d 25%, #ddb917 45%, #ff6e2b 65%,#fa3715 100%);  
+        -webkit-text-fill-color: transparent;  
+        -webkit-background-clip: text;
+        animation: stream 2s infinite linear; 
+        background-size: 200% 100%;
+        background-clip: text;
+    
+        /* text-shadow: 0px 0px 0px rgb(250, 13, 13); */
+    }
+    @keyframes stream {      
+        0%{ 
+        background-position:0 0;
+    }
+        100%{
+            background-position: -100% 0;
+        }
+    }
+    
+    /* 导航栏 */
+    nav{
+        position:sticky;
+        top: 0px;
+        z-index: 99;
+        height: 30px;
+        background-color: var(--main-color);
+    }
+    nav ul{
+      
+        margin:0px auto;
+        width: 900px;
+        display: flex;
+        flex-wrap: nowrap;
+            
+    }
+    
+    nav li{
+        
+        flex: 1;
+        
+        list-style: none;
+    }
+    
+    
+    
+    nav li a{
+        display:block;
+        width: 100%;
+        color: white;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+    
+    }
+    
+    nav li a:hover{
+        background-color: #00eeff;
+        color: rgb(14, 14, 14);
+    }
+    
+    
+    main{
+        
+        /* height: 1080px; */
+        margin:0px auto;
+        position: relative;
+    
+        /* box-shadow:0px 0px 2px black; */
+        /* border-bottom: #444 solid 1px;; */
+    }
+    /* 轮播图 */
+    main .banner{
+        width: 100%;
+        height: 300px;
+        margin: 0px auto;
+        overflow: hidden;
+
+        position: relative;
+        
+    }
+
+    main .banner li {
+        /* display: block; */
+        
+        list-style: none;
+        width: inherit;
+        height: 100%;
+        
+        position:absolute;
+        top: 0px;
+        left: 0px;
+
+        transition: .5s transform ease-in-out;
+    }
+
+    main .banner img{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* main .banner li:nth-of-type(1){
+        
+    } */
+    main .banner li:nth-of-type(2){
+        left: 100%;
+        
+    }
+
+    main .banner li:nth-of-type(3){
+        left: 200%;
+    }
+    main input[type="radio"]{
+        position: relative;
+        /* z-index: 100; */
+        display: none;
+    }
+  
+    .controls-visible {
+        position:absolute;
+        width: 100%;
+        bottom: 12px;
+        text-align: center;
+        z-index: 999;
+    }
+    .controls-visible label{
+        display: block;
+        width: 10px;
+        height: 10px;
+        /* background-color: rgb(255, 0, 0); */
+        background-color: transparent;
+        border-radius: 50%;
+        margin: 0px 3px;
+        border: 2px solid #fff;
+    }
+    /* 选中按钮改变背景色 */
+    main input[type="radio"]:nth-of-type(1):checked~
+    .controls-visible label:nth-of-type(1),
+    main input[type="radio"]:nth-of-type(2):checked~
+    .controls-visible label:nth-of-type(2),
+    main input[type="radio"]:nth-of-type(3):checked~
+    .controls-visible label:nth-of-type(3){
+      /* background-color: var(--main-color); */
+    }
+
+    /* 轮播图切换效果 */
+    main input[type="radio"]:nth-of-type(1):checked~li{
+        transform: translateX(0%);
+    }
+    main input[type="radio"]:nth-of-type(2):checked~li{
+        transform: translateX(-100%);
+    }
+    main input[type="radio"]:nth-of-type(3):checked~li{
+        transform: translateX(-200%);
+    }
+   
+    /* 自动切换轮播图 */
+    /* @keyframes autopaly {
+        0% ,13%{transform: translateX(0%);}
+    
+        33%,56%{transform: translateX(-100%);}
+        66%,99%{transform: translateX(-200%);}
+      }
+
+    main .banner li{
+    
+    animation: autopaly ease 12s infinite normal;
+ 
+    } */
+    main .title span{
+        color: #666;
+        /* text-shadow: 0px 0px 2px #333; */
+        font-size: 32px;
+        font-weight:500;
+        display: block;
+        width: 300px;
+        margin: 0px auto;
+        text-align: center;
+        position: relative;
+      
+    }
+    main .title span::after{
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color:#174897f5;
+        position: absolute;
+        bottom: -2px;
+        left:120px ;
+        border-radius: 10px;
+    }
+    main .index_hot_product{
+      
+        height: 248px;
+        width: 100%;
+        /* background-image: url(./img/lswlbg.jpg); */
+        
+        
+    }
+
+    main .index_hot_product .container{
+        
+        width:900px;
+        margin:0px auto;
+        height: 200px;
+        position: relative;
+    }
+    main .index_hot_product .button-left,
+    main .index_hot_product .button-right{
+        width: 100px;
+        height: 100px;
+        font-size: 100px;
+        line-height:100px;
+        text-align: center;
+       
+        color: #2e70db;
+        /* background-color:  */
+        outline: 5px solid #2e70db;
+        position: absolute;
+        top:50px;
+        border-radius: 50%;
+    }
+    main .index_hot_product .button-left{
+        left: -130px;
+        
+    }
+    main .index_hot_product .button-right{
+        right: -130px;
+    }
+    main .index_hot_product .button-left:hover,
+    main .index_hot_product .button-right:hover{
+        color: yellowgreen;
+        outline: 5px solid yellowgreen;
+    }
+    /* 产品分类 */
+    main .index_product{
+        width: 100%;
+        height: 480px;
+        outline: 12px;
+    }
+    main .index_product .container aside {
+        width: 20%;
+        height: 380px;
+        float: left;
+        background-color: #174897;
+        margin: 10px 0px 0px 0px;
+        border-radius: 5px;
+    }
+    main .index_product .container aside ul{
+        
+    }
+    main .index_product .container aside ul li{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        color:white;
+        text-align: left;
+        padding-left: 40px;
+        box-sizing: border-box;
+        
+        
+    }
+    main .index_product .container aside ul li:nth-of-type(2n){
+        background-color: hsl(217, 70%, 42%);
+    }
+    main .index_product .container aside ul li:hover{
+        background-color:#00eeff;
+    }
+    main .index_product .container main{
+        width: 80%;
+        height: 380px;
+        margin:0px auto;
+        float: left;
+        
+    }
+    /* 商品样式 */
+    .product_container{
+        width: 160px;
+        height: 180px;
+        border-radius: 10px;
+        margin: 10px;
+        box-shadow: 0px 0px 3px #333;
+        background-color:#2e70db;
+        float: left;
+
+    }
+    .product_container:hover{
+        background-color: #00EEFF;
+    }
+    .product_container:hover span{
+        color: #333;
+    }
+    .product_container img{
+        width: 140px;
+        height: 130px;
+        border-radius: 5px;
+        margin: 10px 10px 0px 10px;
+        /* float: left; */
+    }
+    .product_container  span{
+        color: white;
+        display: block;
+        width: 160px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+
+    }
+  /* 选择我们 */
+
+    main .select_us{
+        
+        height: 800px;
+
+        background-image: url(./img/为什么选择我们.svg);
+    }
+    main .select_us .title p{
+       
+        display: block;
+        color: #666;
+        text-align: center;
+    }
+  
+    main .select_us .container{
+        /* backdrop-filter: blur(2px);   */
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    main .select_us .container li{
+        display: block;
+        width: 600px;
+        height: 130px;
+        margin:20px 20px;
+        list-style: none;
+        position: absolute;
+    }
+    main .select_us .container li img{
+        width: 300px;
+        height: 240px;
+        position: absolute;
+        
+       border-radius: 10px;
+    }
+    main .select_us .container li:nth-of-type(1) img{
+        top:0px;
+        left: 380px;
+    }
+    main .select_us .container li:nth-of-type(2) img{
+        top:-200px;
+        left: 700px;
+    }
+    main .select_us .container li:nth-of-type(3) img{
+        bottom: -100px;
+        left: -380px;
+    }
+    main .select_us .container li:nth-of-type(4) img{
+        bottom: 50px;
+        left: -700px;
+    }
+    main .select_us .container li:nth-of-type(1){
+        top: 30px;
+        left: 10%;
+    }
+    main .select_us .container li:nth-of-type(2){
+        top: 230px;
+        left: 10%;
+    }
+    main .select_us .container li:nth-of-type(3){
+        bottom: 240px;
+        right:  -15%;
+        /* left: 10%; */
+    }
+    main .select_us .container li:nth-of-type(4){
+        bottom: 90px;
+        right: -15%;
+        /* left: 10%; */
+    }
+    main .select_us  h2{
+        
+        height: 60px;
+        /* width: 400px; */
+    }
+    main .select_us ul li h2 i{
+        color: #1296db;
+        float: left;
+        font-size: 60px;
+    }
+    /* main .select_us ul li h2 i img{
+        display: block;
+        width: 60px;
+        height: 60px;
+        float: left;
+    } */
+    .select_us ul li h2 span{
+        float: left;
+        margin-left: 20px;
+        color: #666666;
+    }
+    .select_us ul li h2 span em{
+        display: block;
+        font-style: normal;
+        font-weight: bold;
+        color: #007bdf;
+    }
+    .select_us ul li p{
+        text-align: left;
+        clear:both
+    }
+
+    /* 关于我们 */
+    main .index_about{
+
+        color: white;
+        width: 100%;
+        height: 400px;
+        box-sizing: border-box;
+        padding-top: 10px;
+        background: url(../img/index_about.jpg);
+        /* background-position: center center; */
+        background-size: 1000px 400px;
+        opacity: 0.9;
+        position: relative;
+        overflow: hidden;
+    }
+    .index_about .title span{
+        color: white;
+        backdrop-filter: blur(10px);  
+        border-radius: 4px;
+    }
+    .index_about .container {
+        width: 75%;
+        
+        overflow: hidden;
+        margin: -20px auto;
+        /* background-color: red; */
+        display: grid;
+        grid-template-rows: 75px 75px 75px 75px  ;
+        /* grid-template-columns: 100px  100px 100px 100px 100px 100px 100px 100px ; */
+        grid-template-columns: 10%  10% 10% 10% 10% 10% 10% 10% ;
+    }
+
+    .index_about .container img{
+        /* display: block; */
+        /* flex: 1; */
+        grid-row: 2/5;
+        grid-column: 1/5;
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        box-shadow: 0px 0px 3px #333;
+        
+    }
+
+    .index_about .container p{
+        grid-row: 2/5;
+        grid-column: 6/10;
+        /* background-color:rgba(23, 72, 151, 0.95); */
+       
+        backdrop-filter: blur(6px); 
+        padding:20px;
+        border-radius:4px;
+        font-size: 16px;
+        line-height: 20px;
+        /* font-style: oblique; */ 
+        font-variant: inherit;
+    }
+
+
+
+    /* 底部样式 */
+    footer{
+        color: rgb(245, 248, 255);
+        /* width: 900px; */
+        height: 200px;
+        position: relative;
+        margin:0px auto;
+        background-color: var(--main-color);
+    }
+    footer .box{
+      
+        width: 900px;
+        height: 200px;
+        position: relative;
+        box-sizing: border-box;
+        margin:0px auto;
+        padding-top: 20px;
+        background-color: var(--main-color);
+        /* box-shadow: 0px 0px 2px rgb(146, 146, 146); */
+    }
+    footer dl dt{
+        font-weight:900;
+        margin-left: 20px;
+    }
+    footer dl dd{
+        margin:  10px 0px 0px 20px;
+    }
+    footer dl dd a{
+        color: white;
+    }
+    /* 底部二维码 */
+    
+    .wechatma img,
+    .wechatma span{
+        display: block;
+        width: 110px;
+        position: absolute;
+        right: 220px;
+    }
+    .wechatma img{
+    
+        height:110px;
+        top: 20px;
+        border-radius: 4px;
+    
+    }
+    
+    .wechatma span{
+        color: #eee;
+        text-align: center;
+        top: 135px;
+       
+    }
+    
+    /* 版权 */
+    .copyright{
+        position:absolute;
+        width: 900px;
+        height: 22px;
+        line-height: 22px;
+    
+        bottom: 15px;
+        text-align: center;
+        
+    }
+    .copyright>a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    .copyright img{
+        vertical-align: bottom;
+        
+    }
+    
+  
+    
+}
+
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    body{
+        color: rgb(68, 68, 68);
+    }
+    header{
+    
+        width: 900px;
+        height: 72px;
+        margin:0px auto;
+        display: flex;
+        position: relative;
+        
+    }
+    
+    .logo img{
+        width: 72px;
+        height: 72px;
+        /* box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.692); */
+        border-radius: 3px;
+        
+    }
+    h1{
+        line-height: 72px;
+        margin-left: 20px;
+        color: #333;
+    }
+    
+    
+    /* 客户热线 */
+    header .kefuphone{
+    
+        width: 300px;
+        height: 72px;
+        line-height: 72px;
+        font-size: 25px;
+        font-weight: 900;
+      
+        position: absolute;
+        right: 85px;
+        color: transparent; 
+    
+        font-style: oblique;  
+        
+        background-image: -webkit-linear-gradient(left,#fd821d 25%, #ddb917 45%, #ff6e2b 65%,#fa3715 100%);  
+        -webkit-text-fill-color: transparent;  
+        -webkit-background-clip: text;
+        animation: stream 2s infinite linear; 
+        background-size: 200% 100%;
+        background-clip: text;
+    
+        /* text-shadow: 0px 0px 0px rgb(250, 13, 13); */
+    }
+    @keyframes stream {      
+        0%{ 
+        background-position:0 0;
+    }
+        100%{
+            background-position: -100% 0;
+        }
+    }
+    
+    /* 导航栏 */
+    nav{
+        position:sticky;
+        top: 0px;
+        z-index: 99;
+        height: 30px;
+        background-color: #174897;
+    }
+    nav ul{
+      
+        margin:0px auto;
+        width: 900px;
+        display: flex;
+        flex-wrap: nowrap;
+            
+    }
+    
+    nav li{
+        
+        flex: 1;
+        
+        list-style: none;
+    }
+    
+    
+    
+    nav li a{
+        display:block;
+        width: 100%;
+        color: white;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+    
+    }
+    
+    nav li a:hover{
+        background-color: #00eeff;
+        color: rgb(14, 14, 14);
+    }
+    
+    
+    main{
+        
+        height: 1080px;
+        margin:0px auto;
+        position: relative;
+    
+        /* box-shadow:0px 0px 2px black; */
+        /* border-bottom: #444 solid 1px;; */
+    }
+    /* 轮播图 */
+    main .banner{
+        width: 100%;
+        height: 300px;
+        margin: 0px auto;
+        overflow: hidden;
+
+        position: relative;
+        
+    }
+
+    main .banner li {
+        /* display: block; */
+        
+        list-style: none;
+        width: inherit;
+        height: 100%;
+        
+        position:absolute;
+        top: 0px;
+        left: 0px;
+
+        transition: .5s transform ease-in-out;
+    }
+
+    main .banner img{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* main .banner li:nth-of-type(1){
+        
+    } */
+    main .banner li:nth-of-type(2){
+        left: 100%;
+        
+    }
+
+    main .banner li:nth-of-type(3){
+        left: 200%;
+    }
+    main input[type="radio"]{
+        position: relative;
+        /* z-index: 100; */
+        display: none;
+    }
+  
+    .controls-visible {
+        position:absolute;
+        width: 100%;
+        bottom: 12px;
+        text-align: center;
+        z-index: 999;
+    }
+    .controls-visible label{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        margin: 0px 3px;
+        border: 2px solid #fff;
+    }
+    /* 选中按钮改变背景色 */
+    main input[type="radio"]:nth-of-type(1):checked~
+    .controls-visible label:nth-of-type(1),
+    main input[type="radio"]:nth-of-type(2):checked~
+    .controls-visible label:nth-of-type(2),
+    main input[type="radio"]:nth-of-type(3):checked~
+    .controls-visible label:nth-of-type(3){
+      background-color: #174897;
+    }
+
+    /* 轮播图切换效果 */
+    main input[type="radio"]:nth-of-type(1):checked~li{
+        transform: translateX(0%);
+    }
+    main input[type="radio"]:nth-of-type(2):checked~li{
+        transform: translateX(-100%);
+    }
+    main input[type="radio"]:nth-of-type(3):checked~li{
+        transform: translateX(-200%);
+    }
+   
+    /* 自动切换轮播图 */
+    /* @keyframes autopaly {
+        0% ,13%{transform: translateX(0%);}
+    
+        33%,56%{transform: translateX(-100%);}
+        66%,99%{transform: translateX(-200%);}
+      }
+
+    main .banner li{
+    
+    animation: autopaly ease 12s infinite normal;
+ 
+    } */
+    /* 底部样式 */
+    footer{
+        color: rgb(245, 248, 255);
+        /* width: 900px; */
+        height: 200px;
+        position: relative;
+        margin:0px auto;
+        background-color: #174897;
+    }
+    footer .box{
+      
+        width: 900px;
+        height: 200px;
+        position: relative;
+        box-sizing: border-box;
+        margin:0px auto;
+        padding-top: 20px;
+        background-color: #174897;
+        /* box-shadow: 0px 0px 2px rgb(146, 146, 146); */
+    }
+    footer dl dt{
+        font-weight:900;
+        margin-left: 20px;
+    }
+    footer dl dd{
+        margin:  10px 0px 0px 20px;
+    }
+    footer dl dd a{
+        color: white;
+    }
+    /* 底部二维码 */
+    
+    .wechatma img,
+    .wechatma span{
+        display: block;
+        width: 110px;
+        position: absolute;
+        right: 220px;
+    }
+    .wechatma img{
+    
+        height:110px;
+        top: 20px;
+        border-radius: 4px;
+    
+    }
+    
+    .wechatma span{
+        color: #eee;
+        text-align: center;
+        top: 135px;
+       
+    }
+    
+    /* 版权 */
+    .copyright{
+        position:absolute;
+        width: 900px;
+        height: 22px;
+        line-height: 22px;
+    
+        bottom: 15px;
+        text-align: center;
+        
+    }
+    .copyright>a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    .copyright img{
+        vertical-align: bottom;
+        
+    }
+    
+    
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media (min-width: 768px) and (max-width: 991px) {
+    body{
+        color: rgb(68, 68, 68);
+    }
+    header{
+    
+        width: 900px;
+        height: 72px;
+        margin:0px auto;
+        display: flex;
+        position: relative;
+        
+    }
+    
+    .logo img{
+        width: 72px;
+        height: 72px;
+        /* box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.692); */
+        border-radius: 3px;
+        
+    }
+    h1{
+        line-height: 72px;
+        margin-left: 20px;
+        color: #333;
+    }
+    
+    
+    /* 客户热线 */
+    header .kefuphone{
+    
+        width: 300px;
+        height: 72px;
+        line-height: 72px;
+        font-size: 25px;
+        font-weight: 900;
+      
+        position: absolute;
+        right: 85px;
+        color: transparent; 
+    
+        font-style: oblique;  
+        
+        background-image: -webkit-linear-gradient(left,#fd821d 25%, #ddb917 45%, #ff6e2b 65%,#fa3715 100%);  
+        -webkit-text-fill-color: transparent;  
+        -webkit-background-clip: text;
+        animation: stream 2s infinite linear; 
+        background-size: 200% 100%;
+        background-clip: text;
+    
+        /* text-shadow: 0px 0px 0px rgb(250, 13, 13); */
+    }
+    @keyframes stream {      
+        0%{ 
+        background-position:0 0;
+    }
+        100%{
+            background-position: -100% 0;
+        }
+    }
+    
+    /* 导航栏 */
+    nav{
+        position:sticky;
+        top: 0px;
+        z-index: 99;
+        height: 30px;
+        background-color: #174897;
+    }
+    nav ul{
+      
+        margin:0px auto;
+        width: 900px;
+        display: flex;
+        flex-wrap: nowrap;
+            
+    }
+    
+    nav li{
+        
+        flex: 1;
+        
+        list-style: none;
+    }
+    
+    
+    
+    nav li a{
+        display:block;
+        width: 100%;
+        color: white;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+    
+    }
+    
+    nav li a:hover{
+        background-color: #00eeff;
+        color: rgb(14, 14, 14);
+    }
+    
+    
+    main{
+        
+        height: 1080px;
+        margin:0px auto;
+        position: relative;
+    
+        /* box-shadow:0px 0px 2px black; */
+        /* border-bottom: #444 solid 1px;; */
+    }
+    /* 轮播图 */
+    main .banner{
+        width: 100%;
+        height: 300px;
+        margin: 0px auto;
+        overflow: hidden;
+
+        position: relative;
+        
+    }
+
+    main .banner li {
+        /* display: block; */
+        
+        list-style: none;
+        width: inherit;
+        height: 100%;
+        
+        position:absolute;
+        top: 0px;
+        left: 0px;
+
+        transition: .5s transform ease-in-out;
+    }
+
+    main .banner img{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* main .banner li:nth-of-type(1){
+        
+    } */
+    main .banner li:nth-of-type(2){
+        left: 100%;
+        
+    }
+
+    main .banner li:nth-of-type(3){
+        left: 200%;
+    }
+    main input[type="radio"]{
+        position: relative;
+        /* z-index: 100; */
+        display: none;
+    }
+  
+    .controls-visible {
+        position:absolute;
+        width: 100%;
+        bottom: 12px;
+        text-align: center;
+        z-index: 999;
+    }
+    .controls-visible label{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        margin: 0px 3px;
+        border: 2px solid #fff;
+    }
+    /* 选中按钮改变背景色 */
+    main input[type="radio"]:nth-of-type(1):checked~
+    .controls-visible label:nth-of-type(1),
+    main input[type="radio"]:nth-of-type(2):checked~
+    .controls-visible label:nth-of-type(2),
+    main input[type="radio"]:nth-of-type(3):checked~
+    .controls-visible label:nth-of-type(3){
+      background-color: #174897;
+    }
+
+    /* 轮播图切换效果 */
+    main input[type="radio"]:nth-of-type(1):checked~li{
+        transform: translateX(0%);
+    }
+    main input[type="radio"]:nth-of-type(2):checked~li{
+        transform: translateX(-100%);
+    }
+    main input[type="radio"]:nth-of-type(3):checked~li{
+        transform: translateX(-200%);
+    }
+   
+    /* 自动切换轮播图 */
+    /* @keyframes autopaly {
+        0% ,13%{transform: translateX(0%);}
+    
+        33%,56%{transform: translateX(-100%);}
+        66%,99%{transform: translateX(-200%);}
+      }
+
+    main .banner li{
+    
+    animation: autopaly ease 12s infinite normal;
+ 
+    } */
+    /* 底部样式 */
+    footer{
+        color: rgb(245, 248, 255);
+        /* width: 900px; */
+        height: 200px;
+        position: relative;
+        margin:0px auto;
+        background-color: #174897;
+    }
+    footer .box{
+      
+        width: 900px;
+        height: 200px;
+        position: relative;
+        box-sizing: border-box;
+        margin:0px auto;
+        padding-top: 20px;
+        background-color: #174897;
+        /* box-shadow: 0px 0px 2px rgb(146, 146, 146); */
+    }
+    footer dl dt{
+        font-weight:900;
+        margin-left: 20px;
+    }
+    footer dl dd{
+        margin:  10px 0px 0px 20px;
+    }
+    footer dl dd a{
+        color: white;
+    }
+    /* 底部二维码 */
+    
+    .wechatma img,
+    .wechatma span{
+        display: block;
+        width: 110px;
+        position: absolute;
+        right: 220px;
+    }
+    .wechatma img{
+    
+        height:110px;
+        top: 20px;
+        border-radius: 4px;
+    
+    }
+    
+    .wechatma span{
+        color: #eee;
+        text-align: center;
+        top: 135px;
+       
+    }
+    
+    /* 版权 */
+    .copyright{
+        position:absolute;
+        width: 900px;
+        height: 22px;
+        line-height: 22px;
+    
+        bottom: 15px;
+        text-align: center;
+        
+    }
+    .copyright>a{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    .copyright img{
+        vertical-align: bottom;
+        
+    }
+    
+}
+
+
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+   
+    *{
+        padding:0px;
+        margin:0px;
+    }
+
+
+    header{
+
+        width: 480px;
+        height: 120px;
+        margin:0px auto;
+        display: flex;
+        position: relative;
+        
+    }
+
+    .logo img{
+        width: 72px;
+        height: 72px;
+        /* box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.692); */
+        border-radius: 3px;
+        
+    }
+    h1{
+        height: 72px;
+        line-height: 72px;
+        margin-top: 0px;
+        margin-left: 25px;
+        color: #333;
+    }
+
+    /* 客户热线 */
+    header .kefuphone{
+
+        width: 300px;
+        height: 60px;
+        line-height: 72px;
+        font-size: 25px;
+        font-weight: 900;
+    
+        position: absolute;
+        top: 52px;
+        right:105px;
+        color: transparent; 
+
+        font-style: oblique;  
+        
+        background-image: -webkit-linear-gradient(left,#fd821d 25%, #ddb917 45%, #ff6e2b 65%,#fa3715 100%);  
+        -webkit-text-fill-color: transparent;  
+        -webkit-background-clip: text;
+        animation: stream 2s infinite linear; 
+        background-size: 200% 100%;
+        background-clip: text;
+
+        /* text-shadow: 0px 0px 0px rgb(250, 13, 13); */
+    }
+    @keyframes stream {      
+        0%{ 
+        background-position:0 0;
+    }
+        100%{
+            background-position: -100% 0;
+        }
+    }
+
+
+
+
+    /* 导航栏 */
+    nav{
+
+        position:sticky;
+        top: 0px;
+        z-index: 99;
+        width: 100%;
+        height: 60px;
+        
+    }
+    nav ul{
+        background-color: #174897;
+        margin:0px auto;
+        width: 100%;
+        height: 60px;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        /* 是否换行 */
+        flex-wrap: wrap;
+        
+            
+    }
+
+    nav li{
+        display: block;
+        flex: 1;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    nav li a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    
+        color: white;
+        line-height: 60px;
+        text-align: center;
+        text-decoration: none;
+
+    }
+
+    nav li a:hover{
+        background-color: #00eeff;
+        color: rgb(14, 14, 14);
+    }
+
+    main{
+        height: 100vh;
+    }
+    main .banner{
+       
+        height: 200px;
+   
+    }
+    
+    footer{
+        width: 100%;
+        background-color: rgb(23, 72, 151);
+        padding: 10px 0px;
+    }
+    footer .box dl{
+        color: white;
+        width: 75%;
+        margin: 0px auto;
+        text-align: left;
+    }
+    footer dl dt,
+    footer dl dd{
+        margin: 10px;
+    }
+    footer dl dt{
+        font-weight: 900;
+    }
+    footer dl dd a{
+        color: white;
+        
+    }
+    footer .wechatma{
+        width: 70%;
+        margin:0px auto;
+    }
+
+    footer .wechatma img{
+        display: block;
+        width: 25%;
+        margin:10px auto;
+        border-radius: 5px;
+    }
+    footer .wechatma span{
+        color: white;
+        display: block;
+        width: 25%;
+        margin:0px auto;
+        text-align: center;
+    }
+    .copyright{
+        color: white;
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    .copyright a{
+        color: white;
+        display: block;
+        width: 60%;
+        margin: 10px auto;
+        text-align: center;
+        text-decoration: none;
+        
+    }
+    .copyright a img{
+        vertical-align:bottom;
+    }
+
+}
+
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+  body{
+      background-color: blue;
+  }
+}
+
+
+/* 公共样式 */
+
+ /* 轮播图 */
+main .banner{
+    width: 100%;
+    /* height: 300px; */
+    margin: 0px auto;
+    overflow: hidden;
+
+    position: relative;
+    
+}
+
+main .banner li {
+    /* display: block; */
+    
+    list-style: none;
+    width: inherit;
+    height: 100%;
+    
+    position:absolute;
+    top: 0px;
+    left: 0px;
+
+    transition: .5s transform ease-in-out;
+}
+
+main .banner img{
+    width: 100%;
+    height: 100%;
+}
+
+main .banner li:nth-of-type(1){
+    
+}
+main .banner li:nth-of-type(2){
+    left: 100%;
+    
+}
+
+main .banner li:nth-of-type(3){
+    left: 200%;
+}
+main input[type="radio"]{
+    position: relative;
+    /* z-index: 100; */
+    display: none;
+}
+
+.controls-visible {
+    position:absolute;
+    width: 100%;
+    bottom: 12px;
+    text-align: center;
+    z-index: 999;
+}
+.controls-visible label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0px 3px;
+    border: 2px solid #fff;
+}
+/* 选中按钮改变背景色 */
+main input[type="radio"]:nth-of-type(1):checked~
+.controls-visible label:nth-of-type(1),
+main input[type="radio"]:nth-of-type(2):checked~
+.controls-visible label:nth-of-type(2),
+main input[type="radio"]:nth-of-type(3):checked~
+.controls-visible label:nth-of-type(3){
+  background-color: #174897;
+}
+
+/* 轮播图切换效果 */
+main input[type="radio"]:nth-of-type(1):checked~li{
+    transform: translateX(0%);
+}
+main input[type="radio"]:nth-of-type(2):checked~li{
+    transform: translateX(-100%);
+}
+main input[type="radio"]:nth-of-type(3):checked~li{
+    transform: translateX(-200%);
+}
+
+
+  /* 侧边按钮 */
+  .side-button{
+    position:fixed;
+    top: 50%;
+    right: 0px;
+
+    width: 50px;
+}
+
+.side-button a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+    color: white;
+
+    background-color: rgb(23, 72, 151);
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px rgb(49, 49, 49);
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 50px;
+}
+.side-button .wechat,
+.side-button a img.kefu,
+.fanhuidingbu{
+    width: 30px;
+    height:30px;
+    margin:10px;
+
+}
+.side-button a:hover .wechat,
+.side-button a:hover .kefu,
+.side-button a:hover .fanhuidingbu{
+    
+    display:none;
+}
+
+
+.side-button .wechatma{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    right: 60px;
+    top: -30px;
+    box-shadow: 0px 0px 3px #333;
+    visibility: hidden;
+    /* visibility: visible; */
+}
+
+
+.side-button a:hover .wechatma{
+    visibility: visible;
+}
