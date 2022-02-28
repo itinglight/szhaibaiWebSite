@@ -27,6 +27,12 @@ public class ProductDao {
     }
 
     public static List<Product> findProductByKinds(String kinds) throws ClassNotFoundException, SQLException {
+        //注册驱动
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        //获取连接
+        conn = DriverManager.getConnection("jdbc:mysql://47.94.154.2:3306/szhaibai?useUnicode=true&characterEncoding=utf-8", "itinglight", "123");
+
+
         //获取执行sql语句的对象
         java.sql.Statement stmt = conn.createStatement();
         //执行sql语句

@@ -49,8 +49,6 @@ public class Product {
         while (rs.next()) {
             Product product = new Product();
             product.setName(rs.getString("name"));
-
-
             product.setImgUrl("../img/product/"+rs.getString("name")+".jpg");
             product.setKinds(rs.getString("kinds"));
             list.add(product);

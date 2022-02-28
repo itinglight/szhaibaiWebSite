@@ -23,7 +23,7 @@ main .box{
 main dd{
     font-size: 18px;
     font-weight: 600;
-    margin: 10px;
+    margin: 12px;
     /* text-align: center; */
 }
 main #wechatma{
@@ -45,30 +45,13 @@ main .box span{
 }
 main .card{
     /* width: 100%; */
-    margin: 20px;
-}
-/* main #wechatma{
-    width: 150px;
-    height: 150px;
-    position:absolute;
-    top: 25px;
-    left: 40px;
-}
-main .box span{
-    display: block;
-    width: 150px;
-    height: 20px;
-    position:absolute;
-    top:175px;
-    left: 40px;
-    text-align: center;
-
+    margin: 0px 0px  20px 20px;
 }
 
-main #address{
-    width: 220px;
-    height: 220px;
-    position:absolute;
-    bottom: 30px;
-    right: 45px;
-} */
+main svg {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
