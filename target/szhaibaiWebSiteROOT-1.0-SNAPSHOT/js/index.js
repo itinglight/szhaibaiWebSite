@@ -109,7 +109,7 @@ $(".index_product .container li").click(
 //根据种类查找商品
 
 function findProductByKinds(kinds) {
-    var geturl = "http://47.94.154.2/findProductByKinds?kinds=" + kinds;
+    var geturl = "/findProductByKinds?kinds=" + kinds;
     $.ajax({
         url: geturl,
         dataType: 'json',
