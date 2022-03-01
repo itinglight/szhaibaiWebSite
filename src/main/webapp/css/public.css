@@ -4,8 +4,17 @@
     --secon-color: #1296db;
     --secon-color: #007bdf;;
     font-size: 16px;
+    font-display: swap;
     /* font-family: "微软雅黑" "华文细黑", "Microsoft YaHei",STXihei; */
  }
+ /* :root{
+    --main-color:#3adb12;
+    --hover-color:#a0fd35;
+    --secon-color: #3adb12;
+    --secon-color: #a0fd35;
+    font-size: 16px;
+    font-family: "微软雅黑" "华文细黑", "Microsoft YaHei",STXihei;
+ } */
 
  *{
     margin: 0px;
@@ -209,6 +218,8 @@ footer dl dd a{
 }
 .copyright img{
     vertical-align: bottom;
+    width: 22px;
+    height: 22px;
     
 }
 

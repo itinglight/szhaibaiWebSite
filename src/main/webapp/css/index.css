@@ -13,14 +13,17 @@ main{
 /* 轮播图 */
 main .banner{
     width: 100%;
-    height: 300px;
+    height: 26.041667vw;
     margin: 0px auto;
     overflow: hidden; 
     position: relative;
     
 }
-
-main .banner li {
+main .banner ul{
+    width: 100%;
+    height: 100%;
+}
+main .banner ul li {
     list-style: none;
     width: inherit;
     height: 100%;
@@ -82,13 +85,13 @@ main input[type="radio"]:nth-of-type(3):checked~
 }
 
 /* 轮播图切换效果 */
-main input[type="radio"]:nth-of-type(1):checked~li{
+main input[type="radio"]:nth-of-type(1):checked~ul>li{
     transform: translateX(0%);
 }
-main input[type="radio"]:nth-of-type(2):checked~li{
+main input[type="radio"]:nth-of-type(2):checked~ul>li{
     transform: translateX(-100%);
 }
-main input[type="radio"]:nth-of-type(3):checked~li{
+main input[type="radio"]:nth-of-type(3):checked~ul>li{
     transform: translateX(-200%);
 }
 
@@ -120,12 +123,13 @@ main input[type="radio"]:nth-of-type(3):checked~li{
 .banner .controls-left{
    
     left: 10px;
-    top: 120px;
+    top: 42%;
     
 }
 .banner .controls-right{
     right: 10px;
-    top: 120px;
+    /* top: 120px; */
+    top: 42%;
 }
 
 /* 二段标题 */
@@ -389,7 +393,7 @@ main .select_us ul li h2 i{
     display: block;
     font-style: normal;
     font-weight: bold;
-    color: #007bdf;
+    color: var(--secon-color);
 }
 .select_us ul li p{
     text-align: left;
@@ -414,7 +418,7 @@ main .index_about{
 .index_about .title span{
     color: white;
     /* backdrop-filter: blur(10px);   */
-    background-color: #007bdf;;
+    background-color: var(--secon-color);
     border-radius: 4px;
 }
 .index_about .container {
@@ -448,7 +452,7 @@ main .index_about{
    
     /* backdrop-filter: blur(6px);  */
     background-color: var(--main-color);
-    background-color: var(--secon-color);
+    /* background-color: var(--secon-color); */
     padding:14px;
     border-radius:4px;
     font-size: 16px;
