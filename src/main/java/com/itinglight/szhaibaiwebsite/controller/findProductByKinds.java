@@ -30,6 +30,7 @@ public class findProductByKinds extends HttpServlet {
         resp.setHeader("Access-Control-Allow-Credentials", "true");
         String kinds = req.getParameter("kinds");
 
+        resp.setCharacterEncoding("utf-8");
         System.out.println(kinds);
 
         List<Product> products = new ArrayList<Product>();
